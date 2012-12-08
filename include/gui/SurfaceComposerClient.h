@@ -163,6 +163,12 @@ public:
     ScreenshotClient();
 
     // frees the previous screenshot and capture a new one
+    
+    // needed for toroplus libsecril_lte.so
+#ifdef TOROPLUS_RADIO_FIX
+    status_t update();
+#endif
+
     status_t update(const sp<IBinder>& display);
     status_t update(const sp<IBinder>& display,
             uint32_t reqWidth, uint32_t reqHeight);
