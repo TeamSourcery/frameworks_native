@@ -36,6 +36,10 @@ LOCAL_SHARED_LIBRARIES := \
 	libui \
 	libutils \
 
+ifeq ($(TARGET_TOROPLUS_RADIO_FIX), true)
+    LOCAL_CFLAGS += -DTOROPLUS_RADIO_FIX
+endif
+
 LOCAL_MODULE:= libgui
 
 ifeq ($(TARGET_BOARD_PLATFORM), omap4)
