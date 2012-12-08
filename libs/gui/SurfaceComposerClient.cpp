@@ -589,6 +589,20 @@ ScreenshotClient::ScreenshotClient()
     : mWidth(0), mHeight(0), mFormat(PIXEL_FORMAT_NONE) {
 }
 
+<<<<<<< HEAD
+=======
+#ifdef TOROPLUS_RADIO_FIX
+status_t ScreenshotClient::update() {
+    sp<ISurfaceComposer> s(ComposerService::getComposerService());
+    if (s == NULL) return NO_INIT;
+    mHeap = 0;
+    return s->captureScreen(0, &mHeap,
+            &mWidth, &mHeight, &mFormat, 0, 0,
+            0, -1UL);
+}
+#endif
+
+>>>>>>> 59c4614d7632dd36517b8df0e30afcbf63ae71c4
 status_t ScreenshotClient::update(const sp<IBinder>& display) {
     sp<ISurfaceComposer> s(ComposerService::getComposerService());
     if (s == NULL) return NO_INIT;
