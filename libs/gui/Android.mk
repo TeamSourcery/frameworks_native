@@ -36,12 +36,10 @@ LOCAL_SHARED_LIBRARIES := \
 	libui \
 	libutils \
 
-<<<<<<< HEAD
-=======
+
 ifeq ($(TARGET_TOROPLUS_RADIO_FIX), true)
     LOCAL_CFLAGS += -DTOROPLUS_RADIO_FIX
 endif
->>>>>>> 59c4614d7632dd36517b8df0e30afcbf63ae71c4
 
 LOCAL_MODULE:= libgui
 
