@@ -164,7 +164,7 @@ public:
 
     // frees the previous screenshot and capture a new one
    
-    // needed for toroplus libsecril_lte.sokk
+    // needed for toroplus libsecril_lte.so
 #ifdef TOROPLUS_RADIO_FIX
     status_t update();
 #endif
