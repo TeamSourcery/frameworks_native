@@ -590,6 +590,7 @@ ScreenshotClient::ScreenshotClient()
 }
 
 
+
 #ifdef TOROPLUS_RADIO_FIX
 status_t ScreenshotClient::update() {
     sp<ISurfaceComposer> s(ComposerService::getComposerService());
@@ -600,6 +601,7 @@ status_t ScreenshotClient::update() {
             0, -1UL);
 }
 #endif
+
 
 status_t ScreenshotClient::update(const sp<IBinder>& display) {
     sp<ISurfaceComposer> s(ComposerService::getComposerService());
