@@ -206,8 +206,6 @@ static void dumpstate() {
     if (network[0])
         run_command("PING DNS2", 10, SU_PATH, "root", "ping", "-c", "3", "-i", ".5", network, NULL);
 
-#ifdef FWDUMP_bcm4329
-
 #ifdef FWDUMP_bcmdhd
 
     run_command("DUMP WIFI STATUS", 20,

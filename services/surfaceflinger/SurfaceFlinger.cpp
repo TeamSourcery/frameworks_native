@@ -1069,11 +1069,9 @@ void SurfaceFlinger::handleTransactionLocked(uint32_t transactionFlags)
 
     if (transactionFlags & eTraversalNeeded) {
         for (size_t i=0 ; i<count ; i++) {
-<<<<<<< HEAD
-            const sp<LayerBase>& layer = currentLayers[i];
-=======
+
             const sp<LayerBase>& layer(currentLayers[i]);
->>>>>>> remotes/aosp/jb-mr1.1-release
+
             uint32_t trFlags = layer->getTransactionFlags(eTransactionNeeded);
             if (!trFlags) continue;
 
@@ -1145,26 +1143,12 @@ void SurfaceFlinger::handleTransactionLocked(uint32_t transactionFlags)
                         {
                             disp->setProjection(state.orientation,
                                     state.viewport, state.frame);
-                        }
-<<<<<<< HEAD
-
-                        // Walk through all the layers in currentLayers,
-                        // and update their transform hint.
-                        //
-                        // TODO: we could be much more clever about which
-                        // layers we touch and how often we do these updates
-                        // (e.g. only touch the layers associated with this
-                        // display, and only on a rotation).
-                        for (size_t i = 0; i < count; i++) {
-                            const sp<LayerBase>& layerBase = currentLayers[i];
-                            layerBase->updateTransformHint();
-                        }
-=======
->>>>>>> remotes/aosp/jb-mr1.1-release
+                         }
                     }
                 }
             }
 
+   
             // find displays that were added
             // (ie: in current state but not in drawing state)
             for (size_t i=0 ; i<cc ; i++) {
@@ -1215,8 +1199,7 @@ void SurfaceFlinger::handleTransactionLocked(uint32_t transactionFlags)
         }
     }
 
-<<<<<<< HEAD
-=======
+
     if (transactionFlags & (eTraversalNeeded|eDisplayTransactionNeeded)) {
         // The transform hint might have changed for some layers
         // (either because a display has changed, or because a layer
@@ -1272,7 +1255,7 @@ void SurfaceFlinger::handleTransactionLocked(uint32_t transactionFlags)
     }
 
 
->>>>>>> remotes/aosp/jb-mr1.1-release
+
     /*
      * Perform our own transaction if needed
      */
